@@ -78,45 +78,102 @@
 /* work section starts */
 .works {
     background-color: rgb(32, 32, 32);
-    padding: 30px;
-}
-.works .card {
-    position: relative;
-    cursor: pointer;
-    border: 3px solid rgb(34, 34, 34);
-}
-.works img {
-    height: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 .works h1 {
     color: grey;
+    padding: 30px;
 }
-.works a {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    background: transparent;
-    border: 3px solid rgb(255, 255, 255);
-    padding: 10px 20px;
-    color: rgb(255, 255, 255);
+.works .card {
+    overflow: hidden;
+    height: 300px;
+    width: 300px;
+    position: relative;
     cursor: pointer;
-    opacity: 0;
-    font-size: 20px;
-    font-weight: bolder;
-    text-transform: uppercase;
+    margin: 0 15px;
+    box-shadow: 0 0 25px 1px rgba(0, 0, 0, .3);
+    transition: .5s;
+    background-color: #555
 }
-.works a:hover {
-    background: #fff;
-    color: rgb(0, 0, 0);
-    
+
+.works .card:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 500px;
+    transform: translate(-140%, -50%);
+    background-color: rgb(255, 255, 255);
+    opacity: 0.6;
+    border-radius: 50%;
+    transition: .8s
 }
-    
-.works a::after  {
-    opacity: 1;
-    transition: 450ms;
+
+.works .card:hover:after {
+    transform: translate(-50%, -50%)
 }
-.works img::after {
-    opacity: .6;
+
+.works .card:hover img {
+    transform: translate(-50%, -50%) scale(1.3) rotate(20deg)
+}
+
+.works img {
+    position: absolute;
+    height: 110%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .8s
+}
+
+.wrap {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-2000px, -50%);
+    color: #fff;
+    transition: .8s;
+    transition-timing-function: ease-in
+}
+.wrapper{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .tab{
+    display: block;
+    font-size: 24px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: #333;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    padding: 10px;
+    letter-spacing: 2px;
+    transition: all .25s;
+  }
+  .tab:link {
+      color: black;
+  }
+  
+  .tab:hover{
+    letter-spacing: 10px;
+  }
+  
+
+.works .card:hover .wrap {
+    transform: translate(-50%, -50%);
+    transition-timing-function: ease
 }
 /* work section ends */
